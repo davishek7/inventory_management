@@ -1,28 +1,29 @@
 # Inventory Management
 
+**Internship assignment from Hybrowlabs Technologies**
+
 ![Overview video](/assets/gifs/inventory.gif)
 
-
-##### Homepage
+### Homepage
 ![Homepage](/assets/images/location.png)
 
-##### Single Location
-![Homepage](/assets/images/location_details.png)
+### Single Location
+![Single Location](/assets/images/location_details.png)
 
-##### Add Product
-![Homepage](/assets/images/add_product.png)
+### Add Product
+![Add Product](/assets/images/add_product.png)
 
-##### Movement
-![Homepage](/assets/images/movement.png)
+### Movement
+![Movement](/assets/images/movement.png)
 
-##### Movement List
-![Homepage](/assets/images/movement_list.png)
+### Movement List
+![Movement List](/assets/images/movement_list.png)
 
-##### Product Move Out
-![Homepage](/assets/images/move_out.png)
+### Product Move Out
+![Product Move Out](/assets/images/move_out.png)
 
-##### Add Location
-![Homepage](/assets/images/add_location.png)
+### Add Location
+![Add Location](/assets/images/add_location.png)
 
-##### Product List
-![Homepage](/assets/images/product_list.png)
+### Product List
+![Product List](/assets/images/product_list.png)
