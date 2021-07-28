@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Movement{% endblock title %}
+
+{% block content %}
+<h3 class='my-3'>Moving {{product.name}} from {{location.name}}</h3>
+
+<form action="" method="post" class="ppx-5">
+    {% csrf_token %}
+    <input type="hidden" value={{location.name}} name="location">
+    <input type="hidden" value={{product.name}} name="product">
+    <div class="form-group">
+        <label>{{form.location_to.label}}</label>
+        {{form.location_to}}
+        <span>{{form.location_to.errors}}</span>
+    </div>
+    <label for="">Quantity</label>
+    <input type="text" name="quantity" class="form-control form-control-sm mb-3" value={{product.qty}} disabled>
+    <button type="submit" class="btn btn-info btn-sm">Move</button>
+</form>
+{% endblock content %}

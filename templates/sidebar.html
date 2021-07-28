@@ -1,0 +1,14 @@
+<h3>Recent Movements</h3>
+<button class="btn btn-secondary btn-block my-3" data-toggle="modal" data-target="#movementModal">All Movements</button>
+{% include 'all_movements.html' %}
+{% if movements %}
+{% for movement in movements %}
+    <p class="alert alert-success"> 
+        {{movement}}
+        <br/>
+        <span class="small">{{movement.created}}</span>
+    </p>
+{% endfor %}
+{% else %}
+<p>No movements found!</p>
+{% endif %}
