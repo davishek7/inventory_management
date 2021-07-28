@@ -20,7 +20,7 @@
     <tbody class='text-center'>
     {% for product in products %}
       <tr>
-        <th scope="row">{{forloop.counter}}</th>
+        <th scope="row">{{product.id}}</th>
         <td>{{product.name}}</td>
         <td>{{product.location}}</td>
         <td>{{product.qty}}</td>

@@ -24,6 +24,9 @@ class Product(models.Model):
     slug = models.SlugField(max_length=250,unique=True,null=True,db_index=True)
     qty = models.IntegerField(default = 0)
 
+    class Meta:
+        ordering = ['id']
+
     def __str__(self):
         return self.name
 
