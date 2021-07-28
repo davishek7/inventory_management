@@ -138,6 +138,7 @@ def move_out(request,slug,location_slug):
             movement.save()
             product.qty -= product.qty
             product.save()
+            messages.success(request,f'{product.name} successfully moved out!')
             return redirect(location)
     context = {'location':location,'product':product}
     return render(request,'moveout.html',context)

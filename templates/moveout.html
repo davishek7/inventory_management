@@ -4,12 +4,12 @@
 
 {% block content %}
 
-<form action="" method="post">
+<form action="" method="post" class="text-center">
     {% csrf_token %}
-    <p>Are you sure to move out {{product.qty}} {{product.name}} from {{location.name}}?</p>
+    <p>Are you sure to move out {{product.qty}} '{{product.name}}' from {{location.name}}?</p>
     <div>
-        <button type="submit" class="btn btn-danger">Confirm</button>
-        <button type="submit" class="btn btn-secondary">Go back</button>
+        <button type="submit" class="btn btn-danger btn-sm">Confirm</button>
+        <a href="{{location.get_absolute_url}}" class="btn btn-secondary btn-sm">Go back</a>
     </div>
     
 </form>
