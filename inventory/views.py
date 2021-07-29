@@ -4,8 +4,7 @@ from django.template.defaultfilters import slugify
 from django.urls import reverse_lazy
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
-from django.views.generic.edit import CreateView, UpdateView, DeleteView, FormView
-from django.views.generic.edit import FormMixin
+from django.views.generic.edit import CreateView, UpdateView, DeleteView, FormView, FormMixin
 from django.contrib import messages
 from django.db.models import Sum
 from .models import Product, Location, Movement
@@ -51,13 +50,23 @@ class LocationCreateView(FormView):
     form_class = LocationForm
     success_url = reverse_lazy('inventory:index')
 
-    def form_valid(self,form):
-        form.instance.slug = slugify(form.instance.name)
-        if Location.objects.filter(slug=form.instance.slug).exists():
-            messages.warning(self.request,f'{form.instance.name} already exist!')
+    def post(self, request, *args, **kwargs):
+        form = self.get_form()
+        if form.is_valid():
+            form.instance.slug = slugify(form.instance.name)
+            if Location.objects.filter(slug=form.instance.slug).exists():
+                messages.warning(self.request,f'{form.instance.name} already exist!')
+            else:
+                form.save()
+                messages.success(self.request,f'{form.instance.name} added successfully!')
+                return redirect('/')
+            return self.form_valid(form)
         else:
-            form.save()
-            messages.success(self.request,f'{form.instance.name} added successfully!')
+            messages.warning(self.request,'Something went wrong!')
+            return redirect('/')
+            return self.form_invalid(form)
+
+    def form_valid(self,form):
         return super().form_valid(form)
 
 
