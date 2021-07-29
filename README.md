@@ -1,6 +1,6 @@
 # Inventory Management
 
-**Internship assignment from Hybrowlabs Technologies**
+**Internship assignment by Avishek Das from Hybrowlabs Technologies**
 
 ![Overview video](/assets/gifs/inventory.gif)
 
